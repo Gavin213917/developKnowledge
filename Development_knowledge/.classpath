@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_65"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="src/pinyin4j-2.5.0.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/jsoup-1.7.2.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/jtidy-r938.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/commons-beanutils-1.9.2/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/json/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/json/struts2-json-plugin-2.3.15.1.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/json/xwork-core-2.3.15.1.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/日期处理/date4j.jar"/>
+	<classpathentry kind="lib" path="D:/developTools/jar/日期处理/joda-time-1.6.2.jar"/>
+	<classpathentry kind="lib" path="src/commons-io-2.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
