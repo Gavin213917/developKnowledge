@@ -22,15 +22,15 @@ public class StringUtils {
 	public static final long ONE_KB = 1024;
 	public static final long ONE_MB = ONE_KB * ONE_KB;
 	public static final long ONE_GB = ONE_KB * ONE_MB;
-	
-	
+
+
 	public static String countFileSize(File file) {
 		return  countFileSize(file.getAbsolutePath());
 	}
 	/* [ExmayFileCountSize.java] */
 	/**
 	 * 统计文件大小
-	 * 
+	 *
 	 * @param pathname
 	 * @return
 	 */
@@ -58,10 +58,10 @@ public class StringUtils {
 		return fileSizeString;
 	}
 
-	
+
 	/**
 	 * 根据File文件的长度统计文件的大小
-	 * 
+	 *
 	 * @param size
 	 *            File的长度 file.lenght()
 	 * @return 返回文件大小
@@ -93,7 +93,7 @@ public class StringUtils {
 
 	/**
 	 * 根据File文件的长度统计文件的大小
-	 * 
+	 *
 	 * @param size
 	 *            File的长度 file.lenght()
 	 * @return 返回文件大小
@@ -111,33 +111,33 @@ public class StringUtils {
 		}
 		return displaySize;
 	}
-	
+
 	/**
-	 * 
+	 *
 	* @Title:isLeapYear
-	* @author:Gavin  
-	* @date: 2019年5月9日下午3:17:15 
-	* @Description:判断是否是闰年 
+	* @author:Gavin
+	* @date: 2019年5月9日下午3:17:15
+	* @Description:判断是否是闰年
 	* @param int years
-	* @param @return      
-	* @return boolean    
+	* @param @return
+	* @return boolean
 	* @throws
 	 */
 	public static boolean isLeapYear(int years) {
 		return (years % 4 == 0 && years % 100 != 0) || (years % 400 == 0);
 	}
-	
+
 	/**
 	 * switch 语句中的变量类型可以是： byte、short、int 或者 char。
 	 * 从 Java SE 7 开始，switch 支持字符串 String 类型了，同时 case 标签必须为字符串常量或字面量。
 	* @Title:getDays
-	* @author:Gavin  
-	* @date: 2019年5月9日下午3:23:28 
+	* @author:Gavin
+	* @date: 2019年5月9日下午3:23:28
 	* @Description: 判断一年中某个月有多少天
 	* @param @param years
 	* @param @param month
-	* @param @return      
-	* @return dint    
+	* @param @return
+	* @return dint
 	* @throws
 	 */
 	public static int getMonthDays(int years,int month) {
@@ -158,16 +158,16 @@ public class StringUtils {
 		}
 		return result;
 	}
-	
-	
+
+
    /**
-    * 判断一个元素是否为空，如果为空true 否则false 
+    * 判断一个元素是否为空，如果为空true 否则false
 	* @Title:isEmpty
-	* @author:Gavin  
-	* @date: 2019年5月9日下午5:00:33 
+	* @author:Gavin
+	* @date: 2019年5月9日下午5:00:33
 	* @Description:
 	* @version 1.0
-	* 
+	*
 	* String s = "";这个字符串是有值的，是有指向的，可以调用方法。
 	* String s = null; 这个是真的为空对象，他是没有指向的，他不能够调用方法，如果调用则会报空指针异常。
 	* 所以不能写成content.equals("")
@@ -176,28 +176,28 @@ public class StringUtils {
 		return null == str  || str.equals("")
 				|| str.matches("\\s*");
 	}
-	
+
 	/**
 	 * 字符串非空判断
 	 * @Title:isNotEmpty
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:02:58 
-	 * @Description:    
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:02:58
+	 * @Description:
 	 * @version 1.0
 	 */
 	public static boolean isNotEmpty(String content){
 		return !isEmpty(content);
 	}
-	
+
 	/**
 	 * 设定默认值
-	 * @Title: defaultValue 
+	 * @Title: defaultValue
 	 * @author: Gavin
 	 * @time: 2019年7月15日 下午6:50:23
 	 * @param content
 	 * @param defaultValue
-	 * @return 
-	 * @return: String 
+	 * @return
+	 * @return: String
 	 * @throws
 	 */
 	public static String defaultValue(String content,String defaultValue){
@@ -206,32 +206,32 @@ public class StringUtils {
 		}
 		return content;
 	}
-	
+
 	/**
-	 * 字符串转日期   
+	 * 字符串转日期
 	 * @Title:stringToDate
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:04:36 
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:04:36
 	 * @Description:
 	 * @version 1.0
-	 * @throws ParseException 
+	 * @throws ParseException
 	 */
 	public static Date stringToDate(String dateString,String pattern) throws ParseException{
 		return new SimpleDateFormat(pattern).parse(dateString);
 	}
-	
+
 	/**
-	 * 日期转成字符串 
+	 * 日期转成字符串
 	 * @Title:dateToString
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:30:24 
-	 * @Description:   
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:30:24
+	 * @Description:
 	 * @version 1.0
 	 */
 	public static String dateToString(Date date,String pattern) throws ParseException{
 		return new SimpleDateFormat(pattern).format(date);
 	}
-	
+
 	/**
 	 * 将一个数字个格式化成为你的需要的金额【数字会四舍五入】<br/>
 	 * eg:doubleToString(12.5698,"#.##")===12.57<br/>
@@ -239,32 +239,32 @@ public class StringUtils {
 	 * eg:doubleToString(12,"0.00")===12.00<br/>
 	 * eg:doubleToString(12,"#.##")===12<br/>
 	 * @Title:doubleToString
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:38:25 
-	 * @Description:将一个数字个格式化成为你的需要的金额    
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:38:25
+	 * @Description:将一个数字个格式化成为你的需要的金额
 	 * @version 1.0
 	 */
 	public static String doubleToString(Double num,String pattern) throws ParseException{
 		return new DecimalFormat(pattern).format(num);
 	}
-	
+
 	/**
-	 * 替换字符串中所有的空格 
+	 * 替换字符串中所有的空格
 	 * @Title:replaceAllTrim
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:43:57 
-	 * @Description:   
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:43:57
+	 * @Description:
 	 * @version 1.0
 	 */
 	public static String replaceAllTrim(String content){
 		return content.replaceAll("\\s*", "");
 	}
-	
+
 	/**
 	 * 判断一个字符是不是中文  （一个中文包含2个字节）
 	 * @Title:isChineseChar
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:56:14 
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:56:14
 	 * @Description:
 	 * @version 1.0
 	 */
@@ -275,13 +275,13 @@ public class StringUtils {
 			return false;
 		}
 	}
-	
-	
+
+
 	/**
 	 * 截取==我z中国 subString("我z中国",3)===我z<br/>
 	 * @Title:subString
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:57:44 
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:57:44
 	 * @Description:
 	 * @version 1.0
 	 */
@@ -298,16 +298,16 @@ public class StringUtils {
 		}
 		return builder.toString();
 	}
-	
+
 	/**
 	 * 把传入的数转换为中文金额大写形式
 	 * @Title:numFormat
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午6:32:16 
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午6:32:16
 	 * @Description:
 	 * @param flag int 标志位，1 表示转换整数部分，2表示转换小数部分
 	 * @param s String 要转换的字符串
-	 * @return 转换好的带单位的中文金额大写形式    
+	 * @return 转换好的带单位的中文金额大写形式
 	 * @version 1.0
 	 */
 	public static String numFormat(String s,int flag) {
@@ -335,13 +335,13 @@ public class StringUtils {
 		}
 		return newS;
 	}
-	
+
 	/**
-	 * 获取文件的后缀  
+	 * 获取文件的后缀
 	 * @Title:getExt
-	 * @author:Gavin  
-	 * @date: 2019年5月13日下午5:50:48 
-	 * @Description:  
+	 * @author:Gavin
+	 * @date: 2019年5月13日下午5:50:48
+	 * @Description:
 	 * @version 1.0
 	 */
 	public static String getExt(String path){
@@ -350,13 +350,13 @@ public class StringUtils {
 		String ext = path.substring(path.lastIndexOf(".")+1);
 		return ext;
 	}
-	
+
 	/**
 	 * 获取带有点的后缀
 	 * @Title:getExtPonit
-	 * @author:Gavin  
-	 * @date: 2019年5月13日下午5:58:19 
-	 * @Description:   
+	 * @author:Gavin
+	 * @date: 2019年5月13日下午5:58:19
+	 * @Description:
 	 * @version 1.0
 	 */
 	public static String getExtPonit(String path){
@@ -365,11 +365,11 @@ public class StringUtils {
 		return ext;
 	}
 	/**
-	 * 
+	 *
 	 * @Title:getFileName
-	 * @author:Gavin  
-	 * @date: 2019年5月13日下午5:56:26 
-	 * @Description:获取文件名   
+	 * @author:Gavin
+	 * @date: 2019年5月13日下午5:56:26
+	 * @Description:获取文件名
 	 * @version 1.0
 	 */
 	public static String getFileName(String path){
@@ -377,13 +377,13 @@ public class StringUtils {
 		String filename = path.substring(path.lastIndexOf("/")+1, path.lastIndexOf("."));
 		return filename;
 	}
-	
+
 	/**
 	 * 验证码，文件随机数
 	 * @Title:getRandomString
-	 * @author:Gavin  
-	 * @date: 2019年5月13日下午6:27:40 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月13日下午6:27:40
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String getRandomString(int length) {
@@ -402,37 +402,37 @@ public class StringUtils {
 		}
 		return bu.toString();
 	}
-	
+
 	/**
 	 * 获取随机文件名
 	 * @Title:getNewFileName
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午9:04:45 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午9:04:45
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String getNewFileName(String filename){
 		return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+"_"+getRandomString(5)+getExtPonit(filename);
 	}
-	
+
 	/**
 	 * 根据用户ID获取文件随机名
 	 * @Title:getNewFileName
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午9:14:28 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午9:14:28
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String getNewFileName(String filename,Integer userId){
 		return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+"_"+getRandomString(4)+"_"+userId+getExtPonit(filename);
 	}
-	
+
 	/**
 	 * MD5加密
 	 * @Title:md5Base64
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午9:22:27 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午9:22:27
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String md5Base64(String str) {
@@ -444,20 +444,20 @@ public class StringUtils {
 		}
 		return null;
 	}
-	
+
 	public static String base64Encode(byte[] b) {
 		if (b == null) {
 			return null;
 		}
 		return new BASE64Encoder().encode(b);
 	}
-	
+
 	/**
 	 * 凯撒密码加密
 	 * @Title:encryption
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午9:49:58 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午9:49:58
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String encryption(String str,int k){
@@ -485,13 +485,13 @@ public class StringUtils {
 		}
 		return string;
 	}
-	
+
 	/**
 	 * 凯撒密码解密
 	 * @Title:dencryption
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午9:50:30 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午9:50:30
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String dencryption(String str,int n){
@@ -520,37 +520,37 @@ public class StringUtils {
 		}
 		return string;
 	}
-	
+
 	/**
 	 * 根据后缀判断是不是图片
 	 * @Title:isImage
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:03:58 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:03:58
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isImage(String ext) {
 		return ext.toLowerCase().matches("jpg|gif|bmp|png|jpeg");
 	}
-	
+
 	/**
 	 * 根据后缀判断是不是offce文档
 	 * @Title:isDoc
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:04:34 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:04:34
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isDoc(String ext) {
 		return ext.toLowerCase().matches("doc|docx|xls|xlsx|pdf|txt|ppt|pptx");
 	}
-	
+
 	/**
 	 * 根据后缀判断是不是音频
 	 * @Title:isVideo
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:05:06 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:05:06
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isVideo(String ext) {
@@ -560,9 +560,9 @@ public class StringUtils {
 	/**
 	 * 替换标签符号位转义符号
 	 * @Title:htmlEncode
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:05:56 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:05:56
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String htmlEncode(String txt) {
@@ -575,13 +575,13 @@ public class StringUtils {
 		}
 		return txt;
 	}
-	
+
 	/**
 	 * 整数的转换与0补齐
 	 * @Title:formatNO
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:07:00 
-	 * @Description:str 转换的数字  length 转换的长度，不够补0   
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:07:00
+	 * @Description:str 转换的数字  length 转换的长度，不够补0
 	 * @version 1.0
 	 */
 	public static String formatNO(int str, int length) {
@@ -603,13 +603,13 @@ public class StringUtils {
 		}
 		return laststr;
 	}
-	
+
 	/**
 	 * 字符串数组转换成字符串
 	 * @Title:arrToString
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:08:55 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:08:55
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String arrToString(String[] strings, String separtor) {
@@ -624,13 +624,13 @@ public class StringUtils {
 			return "";
 		}
 	}
-	
+
 	/**
 	 * 首字母转换为大写
 	 * @Title:toUpperCaseFirst
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:10:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:10:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String toUpperCaseFirst(String text) {
@@ -640,33 +640,33 @@ public class StringUtils {
 	/**
 	 * 首字母转换为小写
 	 * @Title:toUpperCaseFirst
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:10:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:10:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String toLowerCaseFirst(String text) {
 		return text.substring(0, 1).toLowerCase() + text.substring(1);
 	}
-	
+
 	/**
 	 * 得到首字符
 	 * @Title:toUpperCaseFirst
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:10:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:10:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String getFirstChar(String text) {
 		return text.substring(0, 1);
 	}
-	
+
 	/**
 	 * 判断是否为数字
 	 * @Title:toUpperCaseFirst
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:10:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:10:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isNumeric(String str) {
@@ -674,26 +674,26 @@ public class StringUtils {
 				str);
 		return isNum.matches();
 	}
-	
-	
+
+
 	/**
 	 * 判断字符串是否都是数字组成
 	 * @Title:toUpperCaseFirst
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:10:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:10:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isNumber(String numString) {
 		return StringUtils.isNumeric(numString);
 	}
-	
+
 	/**
 	 * 验证邮箱
 	 * @Title:isEmail
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:13:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:13:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isEmail(String email) {
@@ -708,13 +708,13 @@ public class StringUtils {
 		}
 		return flag;
 	}
-	
+
 	/**
 	 * 验证手机号码
 	 * @Title:isMobile
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:13:38 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:13:38
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isMobile(String mobiles) {
@@ -728,32 +728,32 @@ public class StringUtils {
 		}
 		return flag;
 	}
-	
+
 	/**
 	 * 网络地址验证
 	 * @Title:isHomepage
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:15:13 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:15:13
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static boolean isHomepage(String str) {
 		String regex = "http://(([a-zA-z0-9]|-){1,}\\.){1,}[a-zA-z0-9]{1,}-*";
 		return match(regex, str);
 	}
-	
+
 	private static boolean match(String regex, String str) {
 		Pattern pattern = Pattern.compile(regex);// 将给定的正则表达式编译到具有给定标志的模式中
 		Matcher matcher = pattern.matcher(str);// 模式进行匹配字符串
 		return matcher.matches();
 	}
-	
+
 	/**
 	 * listToString 集合转成字符串
 	 * @Title:listToString
-	 * @author:Gavin  
-	 * @date: 2019年5月14日上午10:16:14 
-	 * @Description:TODO    
+	 * @author:Gavin
+	 * @date: 2019年5月14日上午10:16:14
+	 * @Description:TODO
 	 * @version 1.0
 	 */
 	public static String listToString(List<String> params, String sepator) {
@@ -768,14 +768,14 @@ public class StringUtils {
 			return "";
 		}
 	}
-	
+
 	/**
 	 * 获取char 字符对应的数字
-	 * @Title: getCharNumber 
+	 * @Title: getCharNumber
 	 * @author: Gavin
 	 * @time: 2019年7月4日 下午1:41:18
-	 * @param string 
-	 * @return: void 
+	 * @param string
+	 * @return: void
 	 * @throws
 	 */
 	public static void getCharNumber(String string) {
@@ -787,7 +787,136 @@ public class StringUtils {
 			System.out.println(c+"===="+Integer.valueOf(c));
 		}
 	}
-	
+
+	/**
+	 * 将下划线大写方式命名的字符串转换为驼峰式。如果转换前的下划线大写方式命名的字符串为空，则返回空字符串。 例如：HELLO_WORLD->HelloWorld
+	 *
+	 * @param name 转换前的下划线大写方式命名的字符串
+	 * @return 转换后的驼峰式命名的字符串
+	 */
+	public static String convertToCamelCase(String name)
+	{
+		StringBuilder result = new StringBuilder();
+		// 快速检查
+		if (name == null || name.isEmpty())
+		{
+			// 没必要转换
+			return "";
+		}
+		else if (!name.contains("_"))
+		{
+			// 不含下划线，仅将首字母大写
+			return name.substring(0, 1).toUpperCase() + name.substring(1);
+		}
+		// 用下划线将原始字符串分割
+		String[] camels = name.split("_");
+		for (String camel : camels)
+		{
+			// 跳过原始字符串中开头、结尾的下换线或双重下划线
+			if (camel.isEmpty())
+			{
+				continue;
+			}
+			// 首字母大写
+			result.append(camel.substring(0, 1).toUpperCase());
+			result.append(camel.substring(1).toLowerCase());
+		}
+		return result.toString();
+	}
+
+
+	/**
+	 * 是否包含字符串
+	 *
+	 * @param str 验证字符串
+	 * @param strs 字符串组
+	 * @return 包含返回true
+	 */
+	public static boolean inStringIgnoreCase(String str, String... strs)
+	{
+		if (str != null && strs != null)
+		{
+			for (String s : strs)
+			{
+				if (str.equalsIgnoreCase(trim(s)))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+
+	/**
+	 * 下划线转驼峰命名
+	 */
+	public static String toUnderScoreCase(String str)
+	{
+		if (str == null)
+		{
+			return null;
+		}
+		StringBuilder sb = new StringBuilder();
+		// 前置字符是否大写
+		boolean preCharIsUpperCase = true;
+		// 当前字符是否大写
+		boolean curreCharIsUpperCase = true;
+		// 下一字符是否大写
+		boolean nexteCharIsUpperCase = true;
+		for (int i = 0; i < str.length(); i++)
+		{
+			char c = str.charAt(i);
+			if (i > 0)
+			{
+				preCharIsUpperCase = Character.isUpperCase(str.charAt(i - 1));
+			}
+			else
+			{
+				preCharIsUpperCase = false;
+			}
+
+			curreCharIsUpperCase = Character.isUpperCase(c);
+
+			if (i < (str.length() - 1))
+			{
+				nexteCharIsUpperCase = Character.isUpperCase(str.charAt(i + 1));
+			}
+
+			if (preCharIsUpperCase && curreCharIsUpperCase && !nexteCharIsUpperCase)
+			{
+				sb.append(SEPARATOR);
+			}
+			else if ((i != 0 && !preCharIsUpperCase) && curreCharIsUpperCase)
+			{
+				sb.append(SEPARATOR);
+			}
+			sb.append(Character.toLowerCase(c));
+		}
+
+		return sb.toString();
+	}
+
+
+	/**
+	 * 去空格
+	 */
+	public static String trim(String str)
+	{
+		return (str == null ? "" : str.trim());
+	}
+
+	/**
+	 * @Author gaoming
+	 * @Description //TODO 获取uuid
+	 * @Date 17:09 2020/10/9
+	 * @Param
+	 * @return
+	 **/
+	public static String getUUId() {
+		return UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
+	}
+
 	/**
 	 * 快捷键：Ctrl + o 查看当前类中所有的属性和方法
 	 *        Ctrl + l 定位行
@@ -795,34 +924,34 @@ public class StringUtils {
 	 *        Ctrl + shift + r 全文搜索
 	 *        ctrl+shift+o--导入包
 	 * @Title:main
-	 * @author:Gavin  
-	 * @date: 2019年5月9日下午5:06:05 
-	 * @Description:测试函数    
+	 * @author:Gavin
+	 * @date: 2019年5月9日下午5:06:05
+	 * @Description:测试函数
 	 * @version 1.0
-	 * @throws ParseException 
+	 * @throws ParseException
 	 */
 	public static void main(String[] args) throws ParseException {
 		//stringToDate
 //		Date date = stringToDate("2018/09/13", "yyyy/MM/dd");
 //		System.out.println(date);
-		
+
 		//dateToString
 //		String str = dateToString(new Date(), "yyyy/MM/dd HH:mm:ss");
 //		System.out.println(str);
-		
+
 		///doubleToString
 //		String string = doubleToString(132.4456, "0.000");//132.45
 //		System.out.println(string);
-		
+
 		//replaceAllTrim
 //		String str = replaceAllTrim("i love you");
 //		System.out.println(str);
-		
+
 //		System.out.println(isChineseChar('中'));
-		
+
 //		String str = "我愛ni中囯";
 //		System.out.println(subString(str,0, 5));//我愛n
-		
+
 		//numFormat 加小数部分要拼接
 //		String string = numFormat("111", 1);
 //		String string2 = numFormat("88", 2);
@@ -833,22 +962,22 @@ public class StringUtils {
 
 //		String string = getNewFileName("gavin.java",3);
 //		System.out.println(string);
-		
+
 //		System.out.println(md5Base64("123456"));//百度搜MD5解密即可解开
 //		System.out.println(md5Base64("gavin_123456"));//百度解不开，需付费，加盐加密
 //		System.out.println(md5Base64(md5Base64("123456")));//百度解不开，需付费
-		
+
 //		System.out.println(encryption("abcd", 2));
 //		System.out.println(dencryption("cdef", 2));
-		
+
 		//System.out.println(isNumeric("12"));
-		
-		
+
+
 		//真正的uuid  机器码+时间+ip地址+ UUID
 //		System.out.println(UUID.randomUUID().toString());
 //		System.out.println(UUID.randomUUID().toString());
 //		System.out.println(UUID.randomUUID().toString());
-		
+
 		//System---获取操作系统里面的一些常量信息
 //		System.out.println(System.getProperty("os.name"));
 //		System.out.println(System.getProperty("java.home"));
@@ -861,7 +990,7 @@ public class StringUtils {
 //			Object object = (Object) enumeration.nextElement();
 //			System.out.println(object);
 //		}
-		
+
 //		Properties properties=System.getProperties();
 //		Enumeration<?> enumeration= properties.propertyNames();
 //		while (enumeration.hasMoreElements()) {
@@ -869,7 +998,7 @@ public class StringUtils {
 //			System.out.println(object+"====="+System.getProperty(String.valueOf(object)));
 //		}
 //		
-		
+
 		//RunTime
 //		Runtime runtime = Runtime.getRuntime();
 //		long max=runtime.maxMemory()/1024/1024;
@@ -880,8 +1009,8 @@ public class StringUtils {
 //		System.out.println("空闲的内存数"+free);
 //		System.out.println("总内存数"+total);
 //		System.out.println("剩余内存大小："+(max-total+free));
-		
-		
+
+
 		//Math函数---数学--三角函数，绝对性，平方根，大小运算，四舍五入 乘方
 //   	Math.toDegrees(hudu)//弧度转成角度
 //		System.out.println(Math.toDegrees(3.14));//角度转成弧度
@@ -905,7 +1034,7 @@ public class StringUtils {
 //	
 //	//正切
 //	System.out.println(Math.tan(Math.toRadians(30)));
-	
+
 	//通用--字符串 Math
 //	double s = 10.7;
 //	System.out.println(Math.floor(s));//10.0
@@ -924,32 +1053,32 @@ public class StringUtils {
 //	System.out.println(Math.cbrt(27));
 	//次幂
 //	System.out.println(Math.exp(3));
-	
+
 //	//a的b次方
 //	System.out.println(Math.pow(3, 2));//3*3
 //	System.out.println(Math.pow(3, 3));//3*3*3
-	
+
 //	3*3+2*2+1*1 --阶乘求和
 //	3*2*1+2*+1*1	
 //	
 //	System.out.println(Math.PI);//π--圆周率
 //	System.out.println(Math.E);//自然指数
-	
+
 	//最大值 最小值
 //	Math.min(12, 1);//1
 //	Math.max(12, 1);//12
-	
-	
+
+
 //	//绝对值
 //	System.out.println(Math.abs(-2));
 //	System.out.println(Math.abs(2));
-	
-		
+
+
 	//java基础数据数字--布尔类型
 	//byte short int long float double char 数字类型
 	//boolean 布尔
 
-	
+
 	//BigDecimal 在讲一次
 //	BigDecimal b1= new BigDecimal(1);
 //	BigDecimal b2= new BigDecimal(3);
@@ -958,8 +1087,8 @@ public class StringUtils {
 //	BigDecimal b3=b1.multiply(b2);//相乘
 //	BigDecimal b3=b1.divide(b2,18,BigDecimal.ROUND_HALF_UP);//相除
 //	System.out.println(b3);
-	
+
 //	System.out.println(1/3d);
-		
+
 	}
 }
