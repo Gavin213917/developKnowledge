@@ -1,4 +1,4 @@
-package com.gavin.model.singleton;
+package com.gavin.java.model.singleton;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,117 +6,117 @@ import java.util.Properties;
 
 public class ParseProperties {
 
-	private static String fileName = "jdbc";
-	private String url;
-	private String driver;
-	private String username;
-	private String password;
-	
-	/*
-	 * ÀÁºº£ºÑÓ³Ù¼ÓÔØĞ§Ó¦£¬¶öºº£º
-	 * */
-	
-	private ParseProperties(){
-	}
-	
-	public static class ParsePropertiesHolder{
-		private static  ParseProperties properties = new ParseProperties();
-	}
-	
-	public static ParseProperties getInstance(){
-		return ParsePropertiesHolder.properties;
-	}
-	
-	public static ParseProperties getInstance(String fileName){
-		ParseProperties.fileName = fileName;
-		return ParsePropertiesHolder.properties;
-	}
+    private static String fileName = "jdbc";
+    private String url;
+    private String driver;
+    private String username;
+    private String password;
 
-	/**
-	 * ½âÎöÊı¾İÊôĞÔÎÄ¼şµÄ·½·¨
-	 * @Title: parserProperties 
-	 * @author: Gavin
-	 * @time: 2019Äê6ÔÂ20ÈÕ ÏÂÎç2:49:50 
-	 * @return: void 
-	 * @throws
-	 */
-	public void parserProperties() {
-		try {
-			Properties properties = new Properties();
-			// ÔÚ²»Í¬ÎÄ¼şÏÂÃæ
-			// "D:/eclipse-workspace/Development_knowledge/src/com/gavin/model/db.properties";
-			String path = System.getProperty("user.dir");
-			File file = new File(path+File.separator+"src", ParseProperties.fileName+".properties");
-			properties.load(new FileInputStream(file));
-			driver = properties.getProperty("db.driver");
-			url = properties.getProperty("db.url");
-			username = properties.getProperty("db.username");
-			password = properties.getProperty("db.password");
-		} catch (Exception e) {
-		}
-	}
+    /*
+     * æ‡’æ±‰ï¼šå»¶è¿ŸåŠ è½½æ•ˆåº”ï¼Œé¥¿æ±‰ï¼š
+     * */
 
-	public String getUrl() {
-		return url;
-	}
+    private ParseProperties(){
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public static class ParsePropertiesHolder{
+        private static ParseProperties properties = new ParseProperties();
+    }
 
-	public String getDriver() {
-		return driver;
-	}
+    public static ParseProperties getInstance(){
+        return ParsePropertiesHolder.properties;
+    }
 
-	public void setDriver(String driver) {
-		this.driver = driver;
-	}
+    public static ParseProperties getInstance(String fileName){
+        ParseProperties.fileName = fileName;
+        return ParsePropertiesHolder.properties;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    /**
+     * è§£ææ•°æ®å±æ€§æ–‡ä»¶çš„æ–¹æ³•
+     * @Title: parserProperties
+     * @author: Gavin
+     * @time: 2019å¹´6æœˆ20æ—¥ ä¸‹åˆ2:49:50
+     * @return: void
+     * @throws
+     */
+    public void parserProperties() {
+        try {
+            Properties properties = new Properties();
+            // åœ¨ä¸åŒæ–‡ä»¶ä¸‹é¢
+            // "D:/eclipse-workspace/Development_knowledge/src/com/gavin/model/db.properties";
+            String path = System.getProperty("user.dir");
+            File file = new File(path+File.separator+"src", ParseProperties.fileName+".properties");
+            properties.load(new FileInputStream(file));
+            driver = properties.getProperty("db.driver");
+            url = properties.getProperty("db.url");
+            username = properties.getProperty("db.username");
+            password = properties.getProperty("db.password");
+        } catch (Exception e) {
+        }
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getDriver() {
+        return driver;
+    }
 
-	
-	/**
-	 * ²âÊÔº¯Êı
-	 * @Title: main 
-	 * @author: Gavin
-	 * @time: 2019Äê6ÔÂ20ÈÕ ÏÂÎç2:47:11
-	 * @param args 
-	 * @return: void 
-	 * @throws
-	 */
-	public static void main(String[] args) {
-		
-		ParseProperties parseProperties = new ParseProperties();
-		parseProperties.parserProperties();
-		System.out.println(parseProperties.getDriver());
-		System.out.println(parseProperties.getUrl());
-		System.out.println(parseProperties.getUsername());
-		System.out.println(parseProperties.getPassword());
-		// java.util.Properpties--×¨ÃÅÓÃÀ´´¦ÀíºÍ½âÎöpropertiesµÄÎÄ¼ş
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+    /**
+     * æµ‹è¯•å‡½æ•°
+     * @Title: main
+     * @author: Gavin
+     * @time: 2019å¹´6æœˆ20æ—¥ ä¸‹åˆ2:47:11
+     * @param args
+     * @return: void
+     * @throws
+     */
+    public static void main(String[] args) {
+
+        ParseProperties parseProperties = new ParseProperties();
+        parseProperties.parserProperties();
+        System.out.println(parseProperties.getDriver());
+        System.out.println(parseProperties.getUrl());
+        System.out.println(parseProperties.getUsername());
+        System.out.println(parseProperties.getPassword());
+        // java.util.Properpties--ä¸“é—¨ç”¨æ¥å¤„ç†å’Œè§£æpropertiesçš„æ–‡ä»¶
 //
 //		try {
 //
 //			Properties properties = new Properties();
-//			// ÔÚ²»Í¬ÎÄ¼şÏÂÃæ
+//			// åœ¨ä¸åŒæ–‡ä»¶ä¸‹é¢
 //			// String filename =
 //			// "D:/eclipse-workspace/Development_knowledge/src/com/gavin/model/db.properties";
 //			// properties.load(new FileInputStream(filename));
 //
-//			// ÔÚÍ¬Ò»Ä¿Â¼ÏÂ²éÕÒÎÄ¼şµÄ·½Ê½
+//			// åœ¨åŒä¸€ç›®å½•ä¸‹æŸ¥æ‰¾æ–‡ä»¶çš„æ–¹å¼
 //			InputStream inputStream = Test.class.getResourceAsStream("jdbc.properties");
 //			properties.load(inputStream);
 //
@@ -128,5 +128,5 @@ public class ParseProperties {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-	}
+    }
 }
