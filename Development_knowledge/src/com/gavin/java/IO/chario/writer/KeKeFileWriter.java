@@ -40,7 +40,7 @@ import java.io.OutputStreamWriter;
  * <p>
  * Whether or not a file is available or may be created depends upon the
  * underlying platform. Some platforms, in particular, allow a file to be opened
- * for writing by only one <tt>KeKeFileWriter</tt> (or other file-writing
+ * for writing by only one <tt>KeKeFileWriter</tt> (or beanMap file-writing
  * object) at a time. In such situations the constructors in this class will
  * fail if the file involved is already open.
  *
@@ -65,7 +65,7 @@ public class KeKeFileWriter extends OutputStreamWriter {
 	 * @throws IOException
 	 *             if the named file exists but is a directory rather than a
 	 *             regular file, does not exist but cannot be created, or cannot
-	 *             be opened for any other reason
+	 *             be opened for any beanMap reason
 	 */
 	public KeKeFileWriter(String fileName) throws IOException {
 		super(new FileOutputStream(fileName));
@@ -99,7 +99,7 @@ public class KeKeFileWriter extends OutputStreamWriter {
 	 * @throws IOException
 	 *             if the named file exists but is a directory rather than a
 	 *             regular file, does not exist but cannot be created, or cannot
-	 *             be opened for any other reason
+	 *             be opened for any beanMap reason
 	 */
 	public KeKeFileWriter(String fileName, boolean append) throws IOException {
 		super(new FileOutputStream(fileName, append));
@@ -113,7 +113,7 @@ public class KeKeFileWriter extends OutputStreamWriter {
 	 * @throws IOException
 	 *             if the file exists but is a directory rather than a regular
 	 *             file, does not exist but cannot be created, or cannot be
-	 *             opened for any other reason
+	 *             opened for any beanMap reason
 	 */
 	public KeKeFileWriter(File file) throws IOException {
 		super(new FileOutputStream(file));
@@ -132,7 +132,7 @@ public class KeKeFileWriter extends OutputStreamWriter {
 	 * @throws IOException
 	 *             if the file exists but is a directory rather than a regular
 	 *             file, does not exist but cannot be created, or cannot be
-	 *             opened for any other reason
+	 *             opened for any beanMap reason
 	 * @since 1.4
 	 */
 	public KeKeFileWriter(File file, boolean append) throws IOException {

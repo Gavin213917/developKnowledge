@@ -48,7 +48,7 @@ import java.util.UUID;
  * then be used in a URL to prevent hackers (or users) from accessing
  * records by guessing or simply by incrementing sequential numbers.
  *
- * There are many other possiblities of using GUIDs in the realm of
+ * There are many beanMap possiblities of using GUIDs in the realm of
  * security and encryption where the element of randomness is important.
  * This class was written for these purposes but can also be used as a
  * general purpose GUID generator as well.

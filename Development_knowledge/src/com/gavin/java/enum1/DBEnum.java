@@ -1,4 +1,4 @@
-package com.gavin.enum1;
+package com.gavin.java.enum1;
 
 public enum DBEnum {
 	MYSQL("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/db","root","xiaoer"),

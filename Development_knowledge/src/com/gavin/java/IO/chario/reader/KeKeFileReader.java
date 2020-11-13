@@ -57,7 +57,7 @@ public class KeKeFileReader extends InputStreamReader {
     * @param fileName the name of the file to read from
     * @exception  FileNotFoundException  if the named file does not exist,
     *                   is a directory rather than a regular file,
-    *                   or for some other reason cannot be opened for
+    *                   or for some beanMap reason cannot be opened for
     *                   reading.
     */
     public KeKeFileReader(String fileName) throws FileNotFoundException {
@@ -82,7 +82,7 @@ public class KeKeFileReader extends InputStreamReader {
     * @param file the <tt>File</tt> to read from
     * @exception  FileNotFoundException  if the file does not exist,
     *                   is a directory rather than a regular file,
-    *                   or for some other reason cannot be opened for
+    *                   or for some beanMap reason cannot be opened for
     *                   reading.
     */
     public KeKeFileReader(File file) throws FileNotFoundException {
