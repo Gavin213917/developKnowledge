@@ -1,4 +1,4 @@
-package com.gavin.array;
+package com.gavin.java.array;
 
 public class ArrayDemo {
 
